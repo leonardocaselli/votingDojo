@@ -21,13 +21,15 @@ const PollResult = () => {
                     poll: { question, options, votes, number_of_votes }
                 }
             } = await axios.get(`http://localhost:8000/api/poll/${_id}`)
-            // console.log(Poll)
-            setPollUpdatedPoll({ question, options, votes, number_of_votes })
 
+            setPollUpdatedPoll({ question, options, votes, number_of_votes })
+            console.log("console log data ......")
+            console.log(question, options, votes, number_of_votes)
         }
         fetchData()
     }, [_id])
 
+    if (!updatedPoll) return <h3> Loading...........</h3 >
     return (
         <div>
             <Grid container spacing={3}>
@@ -37,10 +39,14 @@ const PollResult = () => {
                             Voting Dojo
                         </Typography>
                     </Paper>
+                    {updatedPoll.question},options :{updatedPoll.options},votes: {updatedPoll.votes},number_of_votes:{updatedPoll.number_of_votes}
                     <Paper >
                         <Typography style={{ flexGrow: 1, textAlign: 'center', margin: 15 }} variant="h4">
                             {updatedPoll.question}
                         </Typography>
+                    </Paper>
+                    <Paper>
+
                     </Paper>
                 </Grid>
 

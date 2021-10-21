@@ -49,7 +49,7 @@ const VotePoll = () => {
             console.log(error)
         }
     }
-    if (!updatedPoll) return <h3>Loading.....</h3>
+    if (!updatedPoll) return <h3>Loading.........</h3>
 
     return (
         <div>

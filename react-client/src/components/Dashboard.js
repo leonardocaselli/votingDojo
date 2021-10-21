@@ -49,7 +49,7 @@ const Dashboard = ({ allPolls = {}, pollTop3 = {} }) => {
                             <TableBody>
                                 {pollTop3.map((top, key) => {
                                     return (
-                                        < TableRow key={top._id} >
+                                        < TableRow key={key} >
                                             <TableCell><Link to={`/polls/${top._id}/vote`}>{top.question}</Link></TableCell>
                                             <TableCell> {top.number_of_votes} </TableCell>
                                         </TableRow>

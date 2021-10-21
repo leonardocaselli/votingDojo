@@ -26,7 +26,8 @@ const Polls = () => {
         fecthData()
         fecthDataTop()
     }, [])
-    if (!allPolls) return <h3> Loading...........</h3 >
+    if (!allPolls || !pollTop3) return <h3> Loading...........</h3 >
+    // if (!pollTop3) return <h3> Loading.........top3..</h3 >
     return (
         <div>
             <Dashboard allPolls={allPolls} pollTop3={pollTop3} />
